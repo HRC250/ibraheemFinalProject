@@ -4,9 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/ibraheemFinalProject/app/src/main/res/layout/activity_main.xml" value="0.3625" />
+        <entry key="..\:/ibraheemFinalProject/app/src/main/res/layout/activity_settings.xml" value="0.36666666666666664" />
         <entry key="..\:/ibraheemFinalProject/app/src/main/res/layout/activity_sign_in.xml" value="0.36666666666666664" />
         <entry key="..\:/ibraheemFinalProject/app/src/main/res/layout/activity_sign_up.xml" value="0.3625" />
-        <entry key="..\:/ibraheemFinalProject/app/src/main/res/layout/activity_splash_screen.xml" value="0.36666666666666664" />
+        <entry key="..\:/ibraheemFinalProject/app/src/main/res/layout/activity_splash_screen.xml" value="0.33" />
+        <entry key="..\:/ibraheemFinalProject/app/src/main/res/menu/main_menu.xml" value="0.36666666666666664" />
       </map>
     </option>
   </component>
