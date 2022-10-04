@@ -1,9 +1,9 @@
 package gha.bahaa.ibraheemfinalproject;
 
 import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.design.widget.TextInputEditText;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.NonNull;
+import com.google.android.material.textfield.TextInputEditText;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -49,7 +49,7 @@ public class SignIn extends AppCompatActivity {
         });
 
     }
-
+//داله CheckAndSave تستعمل للدخول والتسجيل والخروج
     private void checkAndSave() {
         String email = EtEmail.getText().toString();
         String pass = Etpass.getText().toString();
@@ -71,7 +71,7 @@ public class SignIn extends AppCompatActivity {
             Etpass.setError("password at least 7 character");
             isOk = false;
         }
-        //******
+        // if all the if conditions are true then the inputs will be sent tlo the firebase
         if (isOk) {
             FirebaseAuth auth = FirebaseAuth.getInstance();
             auth.signInWithEmailAndPassword(email, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {

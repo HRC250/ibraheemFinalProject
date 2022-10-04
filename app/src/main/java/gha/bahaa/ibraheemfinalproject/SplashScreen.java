@@ -2,7 +2,7 @@ package gha.bahaa.ibraheemfinalproject;
 
 import android.content.Intent;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class SplashScreen extends AppCompatActivity {
@@ -17,8 +17,8 @@ public class SplashScreen extends AppCompatActivity {
             @Override
             public void run() {
                 Intent i=new Intent(SplashScreen.this,SignIn.class);
-                startActivity(i);
-                finish();
+                startActivity(i); //to start the i which is going from Splash activity to signIn
+                finish();   // to close the current activity
             }
         };
         h.postDelayed(r,3000);

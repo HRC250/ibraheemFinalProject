@@ -1,7 +1,7 @@
 package gha.bahaa.ibraheemfinalproject;
 
-import android.support.design.widget.TextInputEditText;
-import android.support.v7.app.AppCompatActivity;
+import com.google.android.material.textfield.TextInputEditText;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -74,6 +74,9 @@ public class SignUp extends AppCompatActivity {
 
                         //فحص اذا بناء حساب ناجح
                         if (task.isSuccessful()) {
+                            /* if the email and password are valid then the email and the pass are saved in the firebase and a text wil pop
+                            up in the bottom of the screen says "password and emaile are saved"
+                             */
                             Toast.makeText(SignUp.this, "creation successfuly" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             //اغلاق الشاشه الحاليه
                             finish();
