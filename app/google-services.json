@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "542975326470",
+    "firebase_url": "https://ibraheemfinalproject-default-rtdb.firebaseio.com",
+    "project_id": "ibraheemfinalproject",
+    "storage_bucket": "ibraheemfinalproject.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:542975326470:android:90b50f348008a02dbb8687",
+        "android_client_info": {
+          "package_name": "gha.bahaa.ibraheemfinalproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "542975326470-tvq07cdue2i6ok805194fqg1dgtfp7q7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBULR-XyTtyzWx1BLU2FZYxIu9i7VIRMPk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "542975326470-tvq07cdue2i6ok805194fqg1dgtfp7q7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
