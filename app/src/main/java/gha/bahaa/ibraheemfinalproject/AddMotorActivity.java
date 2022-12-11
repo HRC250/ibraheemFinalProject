@@ -36,7 +36,7 @@ import java.util.UUID;
 
 import gha.bahaa.ibraheemfinalproject.data.Motor;
 
-public class AddTaskActivity extends AppCompatActivity {
+public class AddMotorActivity extends AppCompatActivity {
     private static final int IMAGE_PICK_CODE = 100;
     private static final int PERMISSION_CODE = 101;
     private EditText etTitle,etSubject;
@@ -254,17 +254,17 @@ public class AddTaskActivity extends AppCompatActivity {
         String key = reference.child("motors").push().getKey();
         t.setKey(key);
         reference.child("motors").child(uid).child(key).setValue(t).
-                addOnCompleteListener(AddTaskActivity.this, new OnCompleteListener<Void>() {
+                addOnCompleteListener(AddMotorActivity.this, new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful())
                 {
-                    Toast.makeText(AddTaskActivity.this, "add successful", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AddMotorActivity.this, "add successful", Toast.LENGTH_SHORT).show();
                     finish();
                 }
                 else
                 {
-                    Toast.makeText(AddTaskActivity.this, "add failed"+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AddMotorActivity.this, "add failed"+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     task.getException().printStackTrace();
                 }
 

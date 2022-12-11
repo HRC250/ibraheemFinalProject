@@ -5,22 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".AddTaskActivity">
+    tools:context=".AddMotorActivity">
 
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="1138dp"
         android:fillViewport="true">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <Button
                 android:id="@+id/btnSaveTask"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/spnrMember"
                 android:layout_centerHorizontal="true"
@@ -30,7 +30,8 @@
                 android:id="@+id/imgBtn"
                 android:layout_width="match_parent"
                 android:layout_height="154dp"
-                app:srcCompat="@drawable/common_google_signin_btn_icon_dark" />
+                app:srcCompat="@drawable/common_google_signin_btn_icon_dark"
+                tools:ignore="SpeakableTextPresentCheck" />
 
             <Button
                 android:id="@+id/btnUpload"
@@ -64,7 +65,8 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Due Date"
-                android:inputType="date" />
+                android:inputType="date"
+                tools:ignore="TouchTargetSizeCheck" />
 
             <SeekBar
                 android:id="@+id/skbrNeccesary"
@@ -84,13 +86,15 @@
                 android:id="@+id/etSubject"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="text" />
+                android:hint="text"
+                tools:ignore="TouchTargetSizeCheck" />
 
             <EditText
                 android:id="@+id/etTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Title" />
+                android:hint="Title"
+                tools:ignore="TouchTargetSizeCheck" />
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

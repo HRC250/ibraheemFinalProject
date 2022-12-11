@@ -9,6 +9,7 @@ public class Motor
     String type;
     double price;
     String img;
+    String phone;
 
     public Motor() {
     }
@@ -67,6 +68,14 @@ public class Motor
 
     public void setImg(String img) {
         this.img = img;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     @Override
