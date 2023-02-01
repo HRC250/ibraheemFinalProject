@@ -21,7 +21,7 @@ public class SplashScreen extends AppCompatActivity {
                 finish();   // to close the current activity
             }
         };
-        h.postDelayed(r,3000);
+        h.postDelayed(r,2000);
 
 
 

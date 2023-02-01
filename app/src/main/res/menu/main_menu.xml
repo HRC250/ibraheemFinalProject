@@ -3,16 +3,18 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/Settings"
+        android:id="@+id/itmSettings"
         android:icon="@android:drawable/ic_menu_manage"
         android:title="Settings"
         app:showAsAction="always|withText" />
     <item
+        android:id="@+id/itmHistory"
         android:icon="@android:drawable/ic_menu_recent_history"
-        android:title="itmHistory"
+        android:title="History"
         app:showAsAction="always|withText" />
     <item
+        android:id="@+id/itmSignOut"
         android:icon="@android:drawable/ic_lock_power_off"
-        android:title="itmSignOut"
+        android:title="SignOut"
         app:showAsAction="always|withText" />
 </menu>

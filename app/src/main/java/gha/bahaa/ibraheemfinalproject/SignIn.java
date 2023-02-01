@@ -27,8 +27,14 @@ public class SignIn extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
 
+        if(FirebaseAuth.getInstance().getCurrentUser()!=null)
+        {
+            Intent i = new Intent(SignIn.this, MainActivity.class);
+            startActivity(i);
+            finish();
+        }
         EtEmail = findViewById(R.id.Etemail);
-        Etpass = findViewById((R.id.EtPass));
+        Etpass = findViewById((R.id.etPass));
         btnup = findViewById(R.id.btnup);
         btnin = findViewById(R.id.btnin);
 
@@ -44,7 +50,7 @@ public class SignIn extends AppCompatActivity {
         btnin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+checkAndSave();
             }
         });
 
@@ -66,7 +72,7 @@ public class SignIn extends AppCompatActivity {
             EtEmail.setError("wrong email");
             isOk = false;
         }
-
+        if(pass.length()<7)
         {
             Etpass.setError("password at least 7 character");
             isOk = false;
