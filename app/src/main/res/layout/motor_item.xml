@@ -7,86 +7,125 @@
     android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="8dp">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        layout_rowWeight="1"
+        app:cardElevation="6dp"
+        app:cardCornerRadius="12dp"
+        android:layout_margin="12dp">
 
-        <RelativeLayout
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-           >
-
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:gravity="center">
+        <ImageView
+            android:id="@+id/imgMotor"
+            android:src="@drawable/vcccb"
+            android:layout_width="80dp"
+            android:layout_height="80dp"/>
+        <TextView
+            android:id="@+id/tvManufacter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="vcccb"/>
             <TextView
-                android:id="@+id/itmTvTitle"
+                android:id="@+id/tvYear"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_marginTop="27dp"
-                android:layout_marginEnd="183dp"
-                android:layout_marginRight="183dp"
-                android:text="TextView"
-                android:textAllCaps="true"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:fontFamily="cursive" />
+                android:layout_marginTop="6dp"
+                android:text="vcccb"/>
 
-            <TextView
-                android:id="@+id/itmTvSubject"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="93dp"
-                android:layout_marginLeft="93dp"
-                android:layout_marginTop="64dp"
-                android:text="TextView" />
+        </LinearLayout>
 
-            <CheckBox
-                android:id="@+id/itmChbxIsCompleted"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="7dp"
-                android:layout_marginLeft="7dp"
-                android:layout_marginTop="98dp"
-                android:text="Is Completed"
-                tools:ignore="TouchTargetSizeCheck" />
 
-            <RatingBar
-                android:id="@+id/itmRatingPrio"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_marginTop="93dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginRight="20dp"
-                tools:ignore="SpeakableTextPresentCheck" />
 
-            <ImageView
-                android:id="@+id/itmImgInfo"
-                android:layout_width="42dp"
-                android:layout_height="45dp"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_marginTop="18dp"
-                android:layout_marginEnd="11dp"
-                android:layout_marginRight="11dp"
-                app:srcCompat="@android:drawable/ic_dialog_info" />
-
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="90dp"
-                android:layout_height="90dp"
-                tools:srcCompat="@tools:sample/avatars" />
-        </RelativeLayout>
     </androidx.cardview.widget.CardView>
+<!--    <androidx.cardview.widget.CardView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        app:cardCornerRadius="8dp"-->
+<!--        app:cardElevation="8dp">-->
+
+<!--        <RelativeLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--           >-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/itmTvTitle"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_alignParentTop="true"-->
+<!--                android:layout_alignParentEnd="true"-->
+<!--                android:layout_alignParentRight="true"-->
+<!--                android:layout_marginTop="27dp"-->
+<!--                android:layout_marginEnd="183dp"-->
+<!--                android:layout_marginRight="183dp"-->
+<!--                android:text="TextView"-->
+<!--                android:textAllCaps="true"-->
+<!--                android:textSize="18sp"-->
+<!--                android:textStyle="bold"-->
+<!--                app:fontFamily="cursive" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/itmTvSubject"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_alignParentStart="true"-->
+<!--                android:layout_alignParentLeft="true"-->
+<!--                android:layout_alignParentTop="true"-->
+<!--                android:layout_marginStart="93dp"-->
+<!--                android:layout_marginLeft="93dp"-->
+<!--                android:layout_marginTop="64dp"-->
+<!--                android:text="TextView" />-->
+
+<!--            <CheckBox-->
+<!--                android:id="@+id/itmChbxIsCompleted"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_alignParentStart="true"-->
+<!--                android:layout_alignParentLeft="true"-->
+<!--                android:layout_alignParentTop="true"-->
+<!--                android:layout_marginStart="7dp"-->
+<!--                android:layout_marginLeft="7dp"-->
+<!--                android:layout_marginTop="98dp"-->
+<!--                android:text="Is Completed"-->
+<!--                tools:ignore="TouchTargetSizeCheck" />-->
+
+<!--            <RatingBar-->
+<!--                android:id="@+id/itmRatingPrio"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_alignParentTop="true"-->
+<!--                android:layout_alignParentEnd="true"-->
+<!--                android:layout_alignParentRight="true"-->
+<!--                android:layout_marginTop="93dp"-->
+<!--                android:layout_marginEnd="20dp"-->
+<!--                android:layout_marginRight="20dp"-->
+<!--                tools:ignore="SpeakableTextPresentCheck" />-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/itmImgInfo"-->
+<!--                android:layout_width="42dp"-->
+<!--                android:layout_height="45dp"-->
+<!--                android:layout_alignParentTop="true"-->
+<!--                android:layout_alignParentEnd="true"-->
+<!--                android:layout_alignParentRight="true"-->
+<!--                android:layout_marginTop="18dp"-->
+<!--                android:layout_marginEnd="11dp"-->
+<!--                android:layout_marginRight="11dp"-->
+<!--                app:srcCompat="@android:drawable/ic_dialog_info" />-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/imageView"-->
+<!--                android:layout_width="90dp"-->
+<!--                android:layout_height="90dp"-->
+<!--                tools:srcCompat="@tools:sample/avatars" />-->
+<!--        </RelativeLayout>-->
+<!--    </androidx.cardview.widget.CardView>-->
 </LinearLayout>
