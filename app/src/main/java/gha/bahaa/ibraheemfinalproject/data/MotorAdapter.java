@@ -1,6 +1,9 @@
 package gha.bahaa.ibraheemfinalproject.data;
 
+import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
+
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -10,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -18,8 +22,11 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -27,6 +34,7 @@ import com.google.firebase.storage.StorageReference;
 import java.io.File;
 import java.io.IOException;
 
+import gha.bahaa.ibraheemfinalproject.AddMotorActivity;
 import gha.bahaa.ibraheemfinalproject.R;
 
 public class MotorAdapter extends ArrayAdapter<Motor>
@@ -50,20 +58,47 @@ public class MotorAdapter extends ArrayAdapter<Motor>
 
         //building item view
         View vitem= LayoutInflater.from(getContext()).inflate(R.layout.motor_item,parent,false);
-        TextView tvTitle=vitem.findViewById(R.id.itmTvTitle);
-        TextView tvSubject=vitem.findViewById(R.id.itmTvSubject);
-        RatingBar rbPrio =vitem.findViewById(R.id.itmRatingPrio);
-        CheckBox cbIsCompleted=vitem.findViewById(R.id.itmChbxIsCompleted);
-        ImageView ivInfo =vitem.findViewById(R.id.itmImgInfo);
-        ImageView imageView =vitem.findViewById(R.id.imageView);
+        TextView tvYear=vitem.findViewById(R.id.tvYear);
+        TextView tvManufacter=vitem.findViewById(R.id.tvManufacter);
+        ImageView imgMotor =vitem.findViewById(R.id.imgMotor);
+        ImageButton imgbtndel=vitem.findViewById(R.id.imgbtndel);
+        ImageButton bedit=vitem.findViewById(R.id.bedit);
+
 
         //getting data source
         final Motor myTask = getItem(position);
         // downloadImageUsingPicasso(myTask.getImage(),imageView);
         //downloadImageToMemory(myTask.getImage(),imageView);
-        downloadImageToLocalFile(myTask.getImg(),imageView);   //connect item view to data source
-        tvTitle.setText(myTask.getType());
-        tvSubject.setText(myTask.getYear()+"");
+        downloadImageToLocalFile(myTask.getImg(),imgMotor);   //connect item view to data source
+        tvYear.setText(myTask.getType());
+        tvManufacter.setText(myTask.getYear()+"");
+
+        imgbtndel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseDatabase.getInstance().getReference().child("motor").child(Motor.getKey()).removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(getContext(), "Deleted successfully", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(getContext(), "unsuccessfully", Toast.LENGTH_SHORT).show();
+
+                        }
+                    }
+
+                });
+            }
+        });
+        bedit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i=new Intent(getContext(), AddMotorActivity.class);
+                i.putExtra("Motor",Motor);
+                i.setFlags(FLAG_ACTIVITY_NEW_TASK);
+                getContext().startActivity(i);
+            }
+        });
 
 
 

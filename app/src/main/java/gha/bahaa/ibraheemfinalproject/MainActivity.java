@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageButton;
+import android.widget.ListView;
+import android.widget.SearchView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -13,12 +16,25 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 
-public class MainActivity extends AppCompatActivity {
+import gha.bahaa.ibraheemfinalproject.data.MotorAdapter;
 
+public class MainActivity extends AppCompatActivity {
+    private ImageButton imgbtn;
+    private ListView dyn;
+    private SearchView searchView;
+    //تعريف الوسيط
+    MotorAdapter motorAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //بناء الوسيط3.2
+        motorAdapter = new MotorAdapter(getApplicationContext());
+        //تجهيز مؤشر للقائمه لعرض
+        dyn = findViewById(R.id.dyn);
+        //ربط قائمه العرض للوسيط 3.3
+        dyn.setAdapter(motorAdapter);
+        //
 
     }
     /**
