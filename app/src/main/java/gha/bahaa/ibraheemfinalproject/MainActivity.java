@@ -7,6 +7,7 @@ import android.provider.Settings;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.GridView;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.SearchView;
@@ -27,7 +28,7 @@ import gha.bahaa.ibraheemfinalproject.data.MotorAdapter;
 
 public class MainActivity extends AppCompatActivity {
     private ImageButton imgbtn;
-    private ListView dyn;
+    private GridView dyn;
     private SearchView searchView;
     //تعريف الوسيط
     MotorAdapter motorAdapter;
@@ -39,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         //بناء الوسيط3.2
         motorAdapter = new MotorAdapter(getApplicationContext());
         //تجهيز مؤشر للقائمه لعرض
-        dyn = findViewById(R.id.dyn);
+        dyn = findViewById(R.id.gvlist);
         //ربط قائمه العرض للوسيط 3.3
         dyn.setAdapter(motorAdapter);
         //تشغيل مراقب(ليسينير) لاي نغيير على قاعدة البيانات

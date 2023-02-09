@@ -30,20 +30,16 @@
            android:layout_marginLeft="20dp"
            android:layout_marginRight="20dp"
            
-           />
+           >
+
+       </RelativeLayout>
 
 
-       <GridLayout
-        android:id="@+id/Grid"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:rowCount="3"
-        android:columnCount="3"
-        android:columnOrderPreserved="false"
-        android:alignmentMode="alignMargins"
-        >
-
-       </GridLayout>
+       <GridView
+           android:id="@+id/gvlist"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:numColumns="3"/>
 
        <ListView
            android:id="@+id/dyn"
