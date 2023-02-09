@@ -1,6 +1,8 @@
 package gha.bahaa.ibraheemfinalproject.data;
 
-public class Motor
+import java.io.Serializable;
+
+public class Motor implements Serializable
 {
     String owner;
     String key;
