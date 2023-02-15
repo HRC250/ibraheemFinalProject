@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        imgbtn = findViewById(R.id.imgbtn);
         //بناء الوسيط3.2
         motorAdapter = new MotorAdapter(getApplicationContext());
         //تجهيز مؤشر للقائمه لعرض
@@ -48,8 +49,9 @@ public class MainActivity extends AppCompatActivity {
         readMotorFromFireBase();
 
 
+
         //الانتقال من main activity الى addTask عند الضغط على زر الزائد
-        imgbtn.setOnClickListener(new View.OnClickListener() {
+         imgbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(MainActivity.this, AddMotorActivity.class);
@@ -80,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle("Signing out");
             builder.setMessage("are you sure");
+
             builder.setPositiveButton("yes", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
