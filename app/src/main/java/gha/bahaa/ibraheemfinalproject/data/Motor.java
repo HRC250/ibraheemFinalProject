@@ -1,6 +1,7 @@
 package gha.bahaa.ibraheemfinalproject.data;
 
 import java.io.Serializable;
+import java.util.Date;
 
 public class Motor implements Serializable
 {
@@ -11,9 +12,17 @@ public class Motor implements Serializable
     String type;
     double price;
     String img;
+    String video;
     String phone;
+    String hand;
+    long timeStamp;
 
-    public Motor() {
+    public long getTimeStamp() {
+        return timeStamp;
+    }
+
+    public void setTimeStamp(long timeStamp) {
+        this.timeStamp = timeStamp;
     }
 
     public String getOwner() {
@@ -80,16 +89,19 @@ public class Motor implements Serializable
         this.phone = phone;
     }
 
-    @Override
-    public String toString() {
-        return "Motor{" +
-                "owner='" + owner + '\'' +
-                ", key='" + key + '\'' +
-                ", year=" + year +
-                ", engine=" + engine +
-                ", type='" + type + '\'' +
-                ", price=" + price +
-                ", img='" + img + '\'' +
-                '}';
+    public String getHand() {
+        return hand;
+    }
+
+    public void setHand(String hand) {
+        this.hand = hand;
+    }
+
+    public String getVideo() {
+        return video;
+    }
+
+    public void setVideo(String video) {
+        this.video = video;
     }
 }
