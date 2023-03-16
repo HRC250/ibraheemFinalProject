@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -55,12 +56,13 @@ public class AddMotorActivity extends AppCompatActivity {
 
     //upload: 1 add Xml image view or butn and uplaod button
     //upload: 2
-    private ImageButton imgBtnl;
+    private ImageView imgBtnl;
     private Button btnUpload;
     private TextView tvImgUrl;
     private Uri filePath;
     private Uri toUploadimageUri;
     private Uri downladuri;
+    private Button CancelBTN;
     StorageTask uploadTask;
     private Motor  t = new Motor();
 
@@ -132,6 +134,8 @@ public class AddMotorActivity extends AppCompatActivity {
         EtPhone = findViewById(R.id.EtPhone);
         EtYear = findViewById(R.id.EtYear);
         EtPrice = findViewById(R.id.EtPrice);
+        EtType=findViewById(R.id.EtType);
+        CancelBTN=findViewById(R.id.CancelBTN);
 
 
 //        skbrNecessary=findViewById(R.id.skbrNeccesary);
@@ -142,6 +146,14 @@ public class AddMotorActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 dataHandler();
+            }
+        });
+
+        CancelBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(AddMotorActivity.this,MainActivity.class);
+                startActivity(i);
             }
         });
 //        btnDatePicker.setOnClickListener(new View.OnClickListener() {

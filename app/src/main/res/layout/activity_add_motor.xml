@@ -10,21 +10,13 @@
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="1138dp"
+        android:layout_height="wrap_content"
         android:fillViewport="true">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
-            <Button
-                android:id="@+id/btnSaveTask"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/spnrMember"
-                android:layout_centerHorizontal="true"
-                android:text="save" />
 
             <ImageView
                 android:id="@+id/imgBtn"
@@ -53,8 +45,8 @@
                     android:id="@+id/EtEngine"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="number"
-                    android:hint="Enter Engine" />
+                    android:hint="Enter Engine"
+                    android:inputType="number" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -76,8 +68,8 @@
                     android:id="@+id/EtPrice"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="number"
-                    android:hint="Enter Price" />
+                    android:hint="Enter Price"
+                    android:inputType="number" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -88,8 +80,8 @@
                     android:id="@+id/EtPhone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="number"
-                    android:hint="Enter Hand" />
+                    android:hint="Enter Hand"
+                    android:inputType="number" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -100,12 +92,33 @@
                     android:id="@+id/EtHand"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="number"
-                    android:hint="Enter Phone" />
+                    android:hint="Enter Phone"
+                    android:inputType="number" />
             </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnSaveTask"
+            android:layout_width="195dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/spnrMember"
+            android:layout_centerHorizontal="true"
+            android:text="save" />
+
+        <Button
+            android:id="@+id/CancelBTN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Cancel" />
+    </LinearLayout>
 
 
 </LinearLayout>
