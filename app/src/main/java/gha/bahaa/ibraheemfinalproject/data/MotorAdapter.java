@@ -116,6 +116,7 @@ public class MotorAdapter extends ArrayAdapter<Motor>
 //    }
 
     private void downloadImageToLocalFile(String fileURL, final ImageView toView) {
+        if(fileURL==null || fileURL.length()==0) return;
         StorageReference httpsReference = FirebaseStorage.getInstance().getReferenceFromUrl(fileURL);
         final File localFile;
         try {

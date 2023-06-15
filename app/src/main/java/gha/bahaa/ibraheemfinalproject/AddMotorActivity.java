@@ -50,7 +50,7 @@ public class AddMotorActivity extends AppCompatActivity {
 
 
     //upload: 0.1 add firebase storage
-    //upload: 0.2 add this per,issions to manifest xml
+    //upload: 0.2 add this permissions to manifest xml
 //          <uses-permission android:name="android.permission.INTERNET" />
 //          <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
@@ -145,7 +145,13 @@ public class AddMotorActivity extends AppCompatActivity {
         btnSaveTask.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                dataHandler();
+                if (uploadTask != null || (uploadTask != null && uploadTask.isInProgress())) {
+                    Toast.makeText(AddMotorActivity.this, " uploadTask.isInProgress(", Toast.LENGTH_SHORT).show();
+                } else
+                    if(toUploadimageUri!=null)//
+                    uploadImage(toUploadimageUri);
+                    else
+                        dataHandler();
             }
         });
 
@@ -186,8 +192,7 @@ public class AddMotorActivity extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<Uri> task) {
                                     downladuri = task.getResult();
                                     t.setImg(downladuri.toString());
-                                    createTask(t);
-
+                                    dataHandler();
                                 }
                             });
 
@@ -317,10 +322,7 @@ public class AddMotorActivity extends AppCompatActivity {
 
                         }
                     });
-            if (uploadTask != null || (uploadTask != null && uploadTask.isInProgress())) {
-                Toast.makeText(this, " uploadTask.isInProgress(", Toast.LENGTH_SHORT).show();
-            } else
-                uploadImage(toUploadimageUri);
+
 
 
         }

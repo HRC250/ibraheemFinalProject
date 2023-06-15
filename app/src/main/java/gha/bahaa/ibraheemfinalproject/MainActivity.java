@@ -9,7 +9,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.GridView;
 import android.widget.ImageButton;
-import android.widget.ListView;
 import android.widget.SearchView;
 
 import androidx.annotation.NonNull;
@@ -27,8 +26,8 @@ import gha.bahaa.ibraheemfinalproject.data.Motor;
 import gha.bahaa.ibraheemfinalproject.data.MotorAdapter;
 
 public class MainActivity extends AppCompatActivity {
-    private ImageButton imgbtn;
-    private GridView dyn;
+    private ImageButton imgAddbtn;
+    private GridView gridViewMotors;
     private SearchView searchView;
     //تعريف الوسيط
     MotorAdapter motorAdapter;
@@ -37,13 +36,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        imgbtn = findViewById(R.id.imgbtn);
+        imgAddbtn = findViewById(R.id.imgbtn);
         //بناء الوسيط3.2
         motorAdapter = new MotorAdapter(getApplicationContext());
         //تجهيز مؤشر للقائمه لعرض
-        dyn = findViewById(R.id.gvlist);
+        gridViewMotors = findViewById(R.id.gvlist);
         //ربط قائمه العرض للوسيط 3.3
-        dyn.setAdapter(motorAdapter);
+        gridViewMotors.setAdapter(motorAdapter);
         //تشغيل مراقب(ليسينير) لاي نغيير على قاعدة البيانات
 //ويقوم بتنظيف المعطيات الموجه(حذفها)وتنزيل المعلومات الجديدة
         readMotorFromFireBase();
@@ -51,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         //الانتقال من main activity الى addTask عند الضغط على زر الزائد
-         imgbtn.setOnClickListener(new View.OnClickListener() {
+         imgAddbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(MainActivity.this, AddMotorActivity.class);
@@ -114,7 +113,11 @@ public class MainActivity extends AppCompatActivity {
         //مؤشر لجذر قاعدة البيانات التابعة للمشروع
 
         //استخراج الرقم المميز للمهمة
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("motor");//listener لمراقبة اي تغيير يحدث تحت الجذر المحدد
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+        String uid = auth.getCurrentUser().getUid();
+
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("motors").child(uid);       //listener لمراقبة اي تغيير يحدث تحت الجذر المحدد
+
 // اي تغيير بقيمة صفة او حذف او اضافة كائن يتم اعلام ال listener
         // عندما يتم تنزيل كل المعطيات الموجودة تحت الجذر
         reference.addValueEventListener(new ValueEventListener() {
